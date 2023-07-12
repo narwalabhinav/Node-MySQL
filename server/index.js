@@ -1,13 +1,15 @@
 import express from 'express'
 import mysql from 'mysql'
 import cors from 'cors'
+import dotenv from 'dotenv'
 
 const app = express()
+dotenv.config()
 
 const db = mysql.createConnection({
     host: "localhost",
     user: "root",
-    password: "Abhi#123",
+    password: process.env.PASSWORD,
     database: "test"
 })
 
@@ -70,4 +72,5 @@ app.put("/books/:id", (req, res) => {
 
 app.listen(3000, () => {
     console.log("Connected to server!")
+    console.log(process.env.PASSWORD)
 })
