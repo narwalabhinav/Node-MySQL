@@ -72,5 +72,4 @@ app.put("/books/:id", (req, res) => {
 
 app.listen(3000, () => {
     console.log("Connected to server!")
-    console.log(process.env.PASSWORD)
 })
